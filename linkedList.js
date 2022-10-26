@@ -12,7 +12,7 @@ class SinglyLinkedList {
   }
 
   isEmpty() {
-    return this.head == null
+    return !this.head
   }
 
   insertAtBack(data) {
@@ -23,7 +23,6 @@ class SinglyLinkedList {
       this.tail.next = node
     }
     this.tail = node
-
     return this
   }
 
@@ -31,6 +30,19 @@ class SinglyLinkedList {
     for (const item of array) {
       this.insertAtBack(item)
     }
+    return this
+  }
+
+  removeHead() {
+    this.head = this.head.next
+    return this
+  }
+
+  insertAtFront(data) {
+    const node = new Node(data)
+    node.next = this.head
+    this.head = node
+    return this
   }
 }
 

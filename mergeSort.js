@@ -27,10 +27,12 @@ function merge(leftArr, rightArr) {
     if (leftArr[leftIndex] < rightArr[rightIndex]) {
       // we add it to the result
       resultArray.push(leftArr[leftIndex])
+      console.log({ resultArray })
       leftIndex++ //Since we added the value from left index, lets increment it.
     } //else add in the value of the right array.
     else {
       resultArray.push(rightArr[rightIndex])
+      console.log({ resultArray })
       rightIndex++ //after adding the value from right index, lets increment it.
     }
   }
