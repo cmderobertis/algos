@@ -6,14 +6,11 @@ class Solution:
         for col in range(len(grid[row])):
           if grid[row][col] == 2:
             newCoords.append([row, col])
-      if len(newCoords) == 0:
-        for row in range(len(grid)):
-          for col in range(len(grid[row])):
+          if len(newCoords) == 0:
             if grid[row][col] == 1:
               return -1
-        return mins
-      else:
-        return Solution.orangesRotting(self, grid, newCoords, mins)
+            return mins
+      return Solution.orangesRotting(self, grid, newCoords, mins)
     for coord in coords:
       row = coord[0]
       col = coord[1]
