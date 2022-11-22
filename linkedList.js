@@ -44,6 +44,26 @@ class SinglyLinkedList {
     this.head = node
     return this
   }
+
+  size() {
+    let count = 1
+    let runner = this.head
+    while (runner.next) {
+      count++
+      runner = runner.next
+    }
+    return count
+  }
+
+  toArray() {
+    let out = []
+    let runner = this.head
+    while (runner) {
+      out.push(runner.data)
+      runner = runner.next
+    }
+    return out
+  }
 }
 
 // const node1 = new Node("Hello hi")
@@ -58,3 +78,5 @@ sll.insertAllAtBack([
   "not an array...",
 ])
 console.log(sll.head)
+console.log(sll.size())
+console.log(sll.toArray())
